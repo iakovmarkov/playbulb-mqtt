@@ -1,0 +1,51 @@
+{
+  "name": "playbulb-mqtt",
+  "version": "1.0.0",
+  "description": "MQTT interface to command Playbulbs via Bluetoothe LE",
+  "main": "index.js",
+  "author": "Iakov Markov <markov@iakov.me>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "DEBUG='svet:*' nodemon index.js",
+    "start": "DEBUG='svet:*' node index.js",
+    "lint": "eslint **/*.js",
+    "format": "prettier '**/*.js' --write",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.js": [
+        "prettier",
+        "eslint",
+        "git add"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iakovmarkov/playbulb-mqtt.git"
+  },
+  "keywords": [
+    "playbulb",
+    "bluetooth"
+  ],
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-21",
+    "chalk": "^2.1.0",
+    "chroma-js": "^2.4.2",
+    "lodash": "^4.17.4",
+    "mqtt": "^4.3.7",
+    "nconf": "^0.8.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "debug": "^3.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "nodemon": "^1.12.1",
+    "prettier": "^1.15.3"
+  }
+}
